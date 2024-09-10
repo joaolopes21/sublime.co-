@@ -22,6 +22,7 @@ model Cliente{
   email String
   telefone String
   data_inscricao_cl DateTime @default(now())
+  Endereco Endereco[]
 }
 
 model Endereco {
@@ -32,6 +33,8 @@ model Endereco {
   cidade String
   estado String
   rua String
+  clienteId String 
+  cliente Cliente @relation(fields: [clienteId] , references: [id])
 }
 
 model Pedido {
