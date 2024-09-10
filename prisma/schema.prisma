@@ -28,7 +28,7 @@ model Endereco {
   id String @id @default(dbgenerated("NEWID()")) @map("_id")
   cep String
   numero String
-  complemento String
+  complemento String?
   cidade String
   estado String
   rua String
