@@ -63,63 +63,83 @@ a:hover{
     transition: .2s;
 }
 
-.login{
+.pre-itemcon{
+    margin-top: 7%;
+    margin-left: 1%;
+}
+
+.text-item-con{
     text-align: center;
-    margin-top: 20rem;
-    padding:70px;
+    font-size: x-large;
+    font-style: oblique;
+    margin-bottom: 20px;
 }
 
-.holder-email{
-    margin-top: 5rem;
-    font-size: 15px;
-    margin-right: 300px;
-}
-
-.holder-senha{
-    margin-top: 2rem;
-    font-size: 15px;
-    margin-right: 310px;
-}
-
-.input-login{
-    margin-top: 5px;
-    width: 35rem;
-    height: 5rem;
-    padding: 5px;
-    padding-left: 15px;
-    background-size: 20px;
-}
-
-.input-senha{
-    margin-top: 5px;
-    width: 35rem;
-    height: 5rem;
-    padding: 5px;
-    padding-left: 15px;
-    background-size: 20px;
-    margin-bottom: 15px;
-}
-
-.forgotpswd{
-    margin-top: 10px;
-    font-size: medium;
-}
-
-.button {
-    margin-top: 10px;
-    width: 20rem;
-    border: none;
+.product-grid {
+    margin-left: 2rem;
+    display: table;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .product-card {
+    float:left;
+    width: auto;
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-card .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #4a4a4a;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  
+  .product-card .discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4a4a4a;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  
+  .product-card .product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .product-card .product-name {
     font-size: 16px;
-    cursor: pointer;
-    background-color: rgb(0, 0, 0);
-}
-
-button:hover{
-    background-color: #d4af37;
-    transition: 0.7s;
-}
+    margin: 10px 0;
+  }
+  
+  .product-card .product-price {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .product-card .installments {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  .product-card .cashback {
+    font-size: 14px;
+    color: green;
+  }
