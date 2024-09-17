@@ -76,15 +76,16 @@ a:hover{
 }
 
 .product-grid {
-    margin-left: 2rem;
+    margin-left: 6%;
     display: table;
     gap: 20px;
     padding: 20px;
   }
   
   .product-card {
+    margin-right: 10px;
     float:left;
-    width: auto;
+    width: 300px;
     position: relative;
     border: 1px solid #ccc;
     padding: 20px;
