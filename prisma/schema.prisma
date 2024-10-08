@@ -3,55 +3,53 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlserver"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model Produto{
-  id String @id @default(dbgenerated("NEWID()")) @map("_id")
-  name String
-  price String
-  description String 
-  updatedAt DateTime @default(now())
-  createdAt DateTime @default(now())
+model Produto {
+  id          String   @id @default(uuid()) @map("_id") 
+  price       String
+  description String
+  updatedAt   DateTime @default(now())
+  createdAt   DateTime @default(now())
 }
 
-model Cliente{
-  id String @id @default(dbgenerated("NEWID()")) @map("_id")
-  email String
-  telefone String
-  data_inscricao_cl DateTime @default(now())
-  Endereco Endereco[]
+model Cliente {
+  id                 String     @id @default(uuid()) @map("_id")
+  email              String     @unique
+  telefone           String
+  data_inscricao_cl  DateTime   @default(now())
+  Endereco           Endereco[]
 }
 
 model Endereco {
-  id String @id @default(dbgenerated("NEWID()")) @map("_id")
-  cep String
-  numero String
+  id        String   @id @default(uuid()) @map("_id")
+  cep       String
+  numero    String
   complemento String?
-  cidade String
-  estado String
-  rua String
-  clienteId String 
-  cliente Cliente @relation(fields: [clienteId] , references: [id])
+  cidade    String
+  estado    String
+  rua       String
+  clienteId String
+  cliente   Cliente  @relation(fields: [clienteId], references: [id])
 }
 
 model Pedido {
-  id String @id @default(dbgenerated("NEWID()")) @map("_id")
+  id          String   @id @default(uuid()) @map("_id")
   data_pedido DateTime
   preco_pedido Float
-  desconto Float
-  preco_final Float 
+  desconto    Float
+  preco_final Float
 }
 
 model FormaPagamento {
-  id String @id @default(dbgenerated("NEWID()")) @map("_id")
+  id            String @id @default(uuid()) @map("_id")
   descricao_pag String
 }
 
 model Categoria {
-  id String @id @default(dbgenerated("NEWID()")) @map("_id")
+  id            String @id @default(uuid()) @map("_id")
   descricao_cat String
-  
 }
