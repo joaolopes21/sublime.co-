@@ -19,6 +19,7 @@ model Produto {
 model Cliente {
   id                 String     @id @default(uuid()) @map("_id")
   email              String     @unique
+  senha              String 
   telefone           String
   data_inscricao_cl  DateTime   @default(now())
   Endereco           Endereco[]
