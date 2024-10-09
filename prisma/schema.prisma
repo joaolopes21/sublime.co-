@@ -18,6 +18,7 @@ model Produto {
 
 model Cliente {
   id                 String     @id @default(uuid()) @map("_id")
+  nome               String      @default("fulano")
   email              String     @unique
   senha              String 
   telefone           String

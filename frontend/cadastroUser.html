@@ -33,16 +33,53 @@
 <body>
     <div class="cadastro">
         <h1 style="font-size: 35px;">Criar conta</h1>
-        <p class="holder-email">NOME</p>
-        <input type="text" class="input-login" placeholder="Ze da manga">
-        <p class="holder-email">CPF</p>
-        <input type="text" class="input-login" placeholder="***.***.***-**">
-        <p class="holder-email">EMAIL</p>
-        <input type="text" class="input-login" placeholder="hello@reallygreatsite.com">
-        <p class="holder-email">SENHA</p>
-        <P><input type="text" class="input-senha" placeholder="******"></P>
+        <form id="form-cadastro">
+        <p class="holder-email">NOME:</p>
+        <input type="text" id="nome" name="nome" class="input-login" placeholder="Ze da manga">
+        <p class="holder-email">TELEFONE:</p>
+        <input type="text" id ="telefone" name = "telefone" class="input-login" placeholder="(XX)XXXXX-XXXX">
+        <p class="holder-email">EMAIL:</p>
+        <input type="text" id="email" name="email" class="input-login" placeholder="email@seuemail.com.br">
+        <p class="holder-email">SENHA:</p>
+        <P><input type="password" id="senha" name="senha" class="input-senha" placeholder="******"></P>
         <p class="createAcc">Já possui login? Clique <a class="createAcc" href="login.html">aqui.</a></p>
-        <p style="margin-top: 10px;"><button class="button"><b>LOGIN</b></button></p>
+        <p style="margin-top: 10px;"><button class="button"
+          type = "submit"><b>LOGIN</b></button></p>
+      </form>
     </div>
+    <script>
+    document.getElementById('form-cadastro').addEventListener('submit', async function(event) {
+      event.preventDefault(); 
+
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      const data = { nome, telefone, email, senha };
+
+      try {
+          const response = await fetch('http://localhost:3000/cliente/cadastro', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+          });
+
+          if (response.ok) {
+              const result = await response.json();
+              alert('Conta criada com sucesso!');
+              window.location.href = 'login.html';
+          } else {
+              const error = await response.json();
+              alert(`Erro: ${error.message}`);
+          }
+      } catch (err) {
+          console.error('Erro ao enviar o formulário:', err);
+          alert('Ocorreu um erro ao criar a conta. Por favor, tente novamente.');
+      }
+  });
+  </script>
 </body>
 </html>
