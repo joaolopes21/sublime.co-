@@ -1,7 +1,6 @@
 -- CreateTable
 CREATE TABLE "Produto" (
     "_id" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
     "price" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -14,6 +13,7 @@ CREATE TABLE "Produto" (
 CREATE TABLE "Cliente" (
     "_id" TEXT NOT NULL,
     "email" TEXT NOT NULL,
+    "senha" TEXT NOT NULL,
     "telefone" TEXT NOT NULL,
     "data_inscricao_cl" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

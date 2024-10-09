@@ -1,13 +1,14 @@
 import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { clienteService } from './cliente.service';
+import { CreateClienteDto } from './dtos/create-cliente.dto';
 
 
 @Controller('cliente')
 export class clienteController {
     constructor(private service: clienteService) { }
 
-    @Post('/cadastro')
-    async createcliente(@Body() body: any) {
+    @Post('cadastro')
+    async createcliente(@Body() body: CreateClienteDto) {
         return await this.service.createcliente(body)
     }
 
