@@ -32,6 +32,13 @@ export class clienteRepository{
         })
     }
 
+    async findclienteEmail(email: string) {
+        return await this.prisma.cliente.findUnique({
+          where: {
+            email: email,
+          },
+        });
+      }
 }
 
 

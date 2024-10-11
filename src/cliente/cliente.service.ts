@@ -1,5 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { clienteRepository } from './cliente.repository';
+import { LoginDto } from './dtos/login.dto';
 // teste
 @Injectable()
 export class clienteService {
@@ -20,4 +21,19 @@ export class clienteService {
     async updatecliente(body: any){
         return await this.repository.updatecliente(body)
     }
+
+    async login(loginClienteDto: LoginDto) {
+        const { email, senha } = loginClienteDto;
+        const cliente = await this.repository.findclienteEmail(email);
+    
+        if (!cliente) {
+          throw new HttpException('Cliente não encontrado', HttpStatus.UNAUTHORIZED);
+        }
+    
+        if (cliente.senha !== senha) {
+          throw new HttpException('Senha incorreta', HttpStatus.UNAUTHORIZED);
+        }
+    
+        return { message: 'Login realizado com sucesso!', clienteId: cliente.id };
+      }
 }

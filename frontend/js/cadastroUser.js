@@ -7,6 +7,8 @@ document.getElementById('form-cadastro').addEventListener('submit', async functi
     const senha = document.getElementById('senha').value;
   
     const data = { nome, telefone, email, senha };
+
+
   
     try {
         const response = await fetch('http://localhost:3000/cliente/cadastro', {
@@ -25,8 +27,8 @@ document.getElementById('form-cadastro').addEventListener('submit', async functi
             const error = await response.json();
             alert(`Erro: ${error.message}`);
         }
-    } catch (err) {
-        console.error('Erro ao enviar o formulário:', err);
+    } catch (erro) {
+        console.error('Erro ao enviar o formulário:', erro);
         alert('Ocorreu um erro ao criar a conta. Por favor, tente novamente.');
     }
   });

@@ -6,7 +6,8 @@ document.getElementById('form-login').addEventListener('submit', async function(
     const data = { email, senha };
   
     try {
-        const response = await fetch('http://localhost:3000/auth/login', { 
+        const response = await fetch('http://localhost:3000/cliente/login', { 
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -21,8 +22,8 @@ document.getElementById('form-login').addEventListener('submit', async function(
             const error = await response.json();
             alert(`Erro: ${error.message}`);
         }
-    } catch (err) {
-        console.error('Erro ao enviar o formulário:', err);
+    } catch (erro) {
+        console.error('Erro ao enviar o formulário:', erro);
         alert('Ocorreu um erro ao fazer login. Por favor, tente novamente.');
     }
   });
