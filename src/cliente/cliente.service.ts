@@ -18,9 +18,14 @@ export class clienteService {
         return await this.repository.findcliente(id)
     }
 
-    async updatecliente(body: any){
-        return await this.repository.updatecliente(body)
-    }
+    async updatecliente(id: string, body: any) {
+        const cliente = await this.repository.findcliente(id);
+        if (!cliente) {
+          throw new HttpException('Cliente não encontrado', HttpStatus.NOT_FOUND);
+        }
+    
+        return await this.repository.updatecliente(id, body);
+      }
 
     async login(loginClienteDto: LoginDto) {
         const { email, senha } = loginClienteDto;

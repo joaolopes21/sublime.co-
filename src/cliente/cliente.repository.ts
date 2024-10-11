@@ -23,14 +23,14 @@ export class clienteRepository{
         })
     }
 
-    async updatecliente(body: any){
+    async updatecliente(id: string, body: any) {
         return await this.prisma.cliente.update({
-            where: {
-                id: body.id
-            },
-            data: body
-        })
-    }
+          where: {
+            id: id,
+          },
+          data: body,
+        });
+      }
 
     async findclienteEmail(email: string) {
         return await this.prisma.cliente.findUnique({

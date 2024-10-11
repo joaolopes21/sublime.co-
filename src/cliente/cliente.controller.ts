@@ -28,8 +28,8 @@ export class clienteController {
         return await this.service.findcliente(id)
     }
 
-    @Put()
-    async updatecliente(@Body() body: any) {
-        return await this.service.updatecliente(body)
-    }
+    @Put(':id')  
+  async updatecliente(@Param('id') id: string, @Body() body: any) {
+    return await this.service.updatecliente(id, body);
+  }
 }
