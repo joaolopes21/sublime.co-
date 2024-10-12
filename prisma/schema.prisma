@@ -12,6 +12,7 @@ model Produto {
   id          String   @id @default(uuid()) @map("_id") 
   price       String
   description String
+  imageUrl    String?
   updatedAt   DateTime @default(now())
   createdAt   DateTime @default(now())
 }

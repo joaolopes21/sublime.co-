@@ -3,6 +3,7 @@ import { produtoRepository } from './produto.repository';
 
 @Injectable()
 export class produtoService {
+    prisma: any;
     constructor(private repository: produtoRepository){}
 
     async createproduto(body: any){
@@ -19,5 +20,12 @@ export class produtoService {
 
     async updateproduto(body: any){
         return await this.repository.updateproduto(body)
+    }
+
+    async updateProductImage(id: string, imageUrl: string) {
+        return this.prisma.product.update({
+          where: { id: id },
+          data: { imageUrl },
+        });
     }
 }

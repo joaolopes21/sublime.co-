@@ -3,6 +3,7 @@ CREATE TABLE "Produto" (
     "_id" TEXT NOT NULL,
     "price" TEXT NOT NULL,
     "description" TEXT NOT NULL,
+    "imageUrl" TEXT,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -12,6 +13,7 @@ CREATE TABLE "Produto" (
 -- CreateTable
 CREATE TABLE "Cliente" (
     "_id" TEXT NOT NULL,
+    "nome" TEXT NOT NULL DEFAULT 'fulano',
     "email" TEXT NOT NULL,
     "senha" TEXT NOT NULL,
     "telefone" TEXT NOT NULL,
