@@ -1,4 +1,15 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Post, Body } from '@nestjs/common';
+import { PedidoService } from './pedido.service';
 
-@Controller('pedido')
-export class PedidoController {}
+
+@Controller('pedidos')
+export class PedidoController {
+    constructor(private readonly pedidoService: PedidoService) {}
+
+  @Post()
+  async createOrder(
+    @Body() body: { userId: string, products: { productId: string, quantity: number }[] }
+  ) {
+    return this.pedidoService.createOrder(body.userId, body.products);
+  }
+}

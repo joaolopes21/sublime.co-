@@ -15,6 +15,8 @@ model Produto {
   imageUrl    String?
   updatedAt   DateTime @default(now())
   createdAt   DateTime @default(now())
+  PedidoItem  PedidoItem[]
+  estoque     Int
 }
 
 model Cliente {
@@ -25,6 +27,7 @@ model Cliente {
   telefone           String
   data_inscricao_cl  DateTime   @default(now())
   Endereco           Endereco[]
+  Pedido             Pedido[]
 }
 
 model Endereco {
@@ -45,7 +48,21 @@ model Pedido {
   preco_pedido Float
   desconto    Float
   preco_final Float
+  userId      String
+  user        Cliente   @relation(fields: [userId], references: [id])
+  pedidoItem  PedidoItem[]
 }
+
+
+model PedidoItem {
+  id        Int     @id @default(autoincrement())
+  pedidoId   String
+  produtoId String
+  quantidade  Int
+  pedido     Pedido    @relation(fields: [pedidoId], references: [id])
+  produto   Produto  @relation(fields: [produtoId], references: [id])
+}
+
 
 model FormaPagamento {
   id            String @id @default(uuid()) @map("_id")
