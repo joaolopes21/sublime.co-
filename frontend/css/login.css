@@ -129,9 +129,23 @@ a:hover {
   background-color: rgb(0, 0, 0);
 }
 
+.buttonLogout {
+  margin-top: 18rem;
+  margin-left: 75%;
+  width: 20rem;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+}
+
 .buttonDelete {
-  margin-top: 20rem;
-  margin-left: 90%;
+  margin-left: 10px;
   width: 20rem;
   border: none;
   color: white;
