@@ -1,33 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sublime.CO</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sublime.CO</title>
 
+<<<<<<< Updated upstream
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+=======
+    <link rel="stylesheet" href="css/cadastroUser.css" />
+  </head>
+>>>>>>> Stashed changes
 
-  <link rel="stylesheet" href="css/cadastroUser.css">
+  <header>
+    <a href="sublime.html"
+      ><img src="images/sublime.png" class="logo_sublime"
+    /></a>
 
-</head>
+    <div class="sections">
+      <a href="#" style="margin-right: 5px"
+        >Lançamentos <i class="fas fa-angle-down"></i
+      ></a>
+      <a href="#" style="margin-right: 5px"
+        >Vestuário <i class="fas fa-angle-down"></i
+      ></a>
+      <a href="#" style="margin-right: 5px">Promoções </a>
+    </div>
 
-<header>
-
-    <a  href="index.html"><img src="images/sublime.png" class="logo_sublime"></a>
-  
-  <div class="sections">
-    <a href="#" style="margin-right: 5px;">Lançamentos <i class='fas fa-angle-down'></i></a>
-    <a href="#" style="margin-right: 5px;">Vestuário <i class='fas fa-angle-down'></i></a>
-    <a href="#" style="margin-right: 5px;">Promoções </a>
-  </div>
-
-    <input class=searchbar type="text" placeholder="Pesquisar produto">
+    <input class="searchbar" type="text" placeholder="Pesquisar produto" />
 
     <div class="icones">
-      <a href="#" style="margin-right: 5px;">Carrinho <i class="fas fa-shopping-cart" ></i></a>
-      <a href="login.html" style="margin-right: 5px;">Conta <i class="fas fa-user" ></i></a>
+      <a href="#" style="margin-right: 5px"
+        >Carrinho <i class="fas fa-shopping-cart"></i
+      ></a>
+      <a href="login.html" style="margin-right: 5px"
+        >Conta <i class="fas fa-user"></i
+      ></a>
     </div>
+<<<<<<< Updated upstream
 </header>
 
 <body>
@@ -46,3 +57,57 @@
     </div>
 </body>
 </html>
+=======
+  </header>
+
+  <body>
+    <div class="cadastro">
+      <h1 style="font-size: 35px">Criar conta</h1>
+      <form id="form-cadastro">
+        <p class="holder-email">NOME:</p>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          class="input-login"
+          placeholder="Ze da manga"
+        />
+        <p class="holder-email">TELEFONE:</p>
+        <input
+          type="text"
+          id="telefone"
+          name="telefone"
+          class="input-login"
+          placeholder="(XX)XXXXX-XXXX"
+        />
+        <p class="holder-email">EMAIL:</p>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          class="input-login"
+          placeholder="email@seuemail.com.br"
+        />
+        <p class="holder-email">SENHA:</p>
+        <p>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            class="input-senha"
+            placeholder="******"
+          />
+        </p>
+        <p class="createAcc">
+          Já possui login? Clique
+          <a class="createAcc" href="login.html">aqui.</a>
+        </p>
+        <p style="margin-top: 10px">
+          <button class="button" type="submit"><b>CRIAR CONTA</b></button>
+        </p>
+      </form>
+    </div>
+    <script src="js/cadastroUser.js"></script>
+  </body>
+</html>
+>>>>>>> Stashed changes
