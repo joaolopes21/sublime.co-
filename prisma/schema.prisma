@@ -11,6 +11,7 @@ datasource db {
 model Produto {
   id          String   @id @default(uuid()) @map("_id") 
   price       String
+  pricepix    String
   description String
   imageUrl    String?
   updatedAt   DateTime @default(now())
