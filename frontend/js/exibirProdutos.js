@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const productGrid = document.querySelector('.product-grid');
     const searchbar = document.getElementById('searchbar');
-    let produtos = []; // Armazena todos os produtos
+    let produtos = [];
+
 
     try {
         const response = await fetch('http://localhost:3000/produto/exibir');
