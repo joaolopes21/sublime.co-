@@ -4,28 +4,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     let produtos = []; // Armazena todos os produtos
 
     try {
-        const response = await fetch('http://localhost:3000/produto/exibir'); // URL da sua API de produtos
+        const response = await fetch('http://localhost:3000/produto/exibir');
         const products = await response.json();
-        produtos = products; // Atribui a resposta à variável produtos
+        produtos = products;
 
-        displayProducts(products); // Exibe os produtos ao carregar a página
+        displayProducts(products);
 
-        // Adiciona o evento de input para a barra de pesquisa
         searchbar.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase(); // Obtém o termo de busca
+            const searchTerm = e.target.value.toLowerCase();
             const filteredProducts = produtos.filter(product =>
                 product.description.toLowerCase().includes(searchTerm)
-            ); // Filtra os produtos com base no termo de busca
-            displayProducts(filteredProducts); // Exibe os produtos filtrados
+            );
+            displayProducts(filteredProducts);
         });
 
     } catch (error) {
         console.error('Erro ao carregar produtos:', error);
     }
 
-    // Função para exibir produtos
     function displayProducts(products) {
-        productGrid.innerHTML = ''; // Limpa a lista de produtos atuais
+        productGrid.innerHTML = '';
 
         products.forEach(product => {
             const productCard = document.createElement('div');

@@ -1,62 +1,48 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sublime.CO</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sublime.CO</title>
 
-    <link rel="stylesheet" href="css/login.css" />
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-  <header>
-    <a href="sublimelogged.html"
-      ><img src="images/sublime.png" class="logo_sublime"
-    /></a>
+  <link rel="stylesheet" href="css/login.css" />
+</head>
 
-    <div class="sections">
-      <a href="#" style="margin-right: 5px"
-        >Lançamentos <i class="fas fa-angle-down"></i
-      ></a>
-      <a href="#" style="margin-right: 5px"
-        >Vestuário <i class="fas fa-angle-down"></i
-      ></a>
-      <a href="#" style="margin-right: 5px">Promoções </a>
-    </div>
+<header>
+  <a href="sublimelogged.html"><img src="images/sublime.png" class="logo_sublime" /></a>
 
-    <input class="searchbar" style="width: 40rem;" type="text" placeholder="Pesquisar produto" />
+  <div class="sections">
+    <a href="#" style="margin-right: 5px">Lançamentos <i class="fas fa-angle-down"></i></a>
+    <a href="#" style="margin-right: 5px">Vestuário <i class="fas fa-angle-down"></i></a>
+    <a href="#" style="margin-right: 5px">Promoções </a>
+  </div>
 
-    <div class="icones">
-      <a href="#" style="margin-right: 5px"
-        >Carrinho <i class="fas fa-shopping-cart"></i
-      ></a>
-      <a href="perfilUser.html" style="margin-right: 5px"
-        >Editar conta <i class="fas fa-user"></i
-      ></a>
-    </div>
-  </header>
-  <body>
-    <div class="login">
-      <h1 style="font-size: 35px">Dados de login</h1>
-      <p class="holder-email">EMAIL</p>
-      <input
-        type="text"
-        class="input-login"
-        placeholder="hello@reallygreatsite.com"
-      />
-      <p class="holder-senha">SENHA</p>
-      <p><input type="text" class="input-senha" placeholder="******" /></p>
-      <p style="margin-top: 10px">
-        <button class="button"><b>ALTERAR DADOS</b></button>
-        <p></p>
-        <button class="buttonLogout"><b>LOGOUT</b></button>
-        <button class="buttonDelete"><b>EXCLUIR CONTA</b></button>
-      </p>
-    </div>
-  </body>
+  <input class="searchbar" style="width: 40rem;" type="text" placeholder="Pesquisar produto" />
+
+  <div class="icones">
+    <a href="#" style="margin-right: 5px">Carrinho <i class="fas fa-shopping-cart"></i></a>
+    <a href="perfilUser.html" style="margin-right: 5px">Editar conta <i class="fas fa-user"></i></a>
+  </div>
+</header>
+
+<body>
+  <div class="login">
+    <h1 style="font-size: 35px">Dados de login</h1>
+    <p class="holder-email">EMAIL</p>
+    <input type="text" class="input-login" placeholder="novoemail@email.com" />
+    <p class="holder-senha">SENHA</p>
+    <p><input type="text" class="input-senha" placeholder="******" /></p>
+    <p style="margin-top: 10px">
+      <button class="button"><b>ALTERAR DADOS</b></button>
+    <p></p>
+    <button class="buttonLogout" onclick="window.location.href='sublime.html';"><b>LOGOUT</b></button>
+    <button class="buttonDelete"><b>EXCLUIR CONTA</b></button>
+    </p>
+  </div>
+</body>
+
 </html>
